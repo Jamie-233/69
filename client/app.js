@@ -1,5 +1,4 @@
 import ReactDom from 'react-dom';
-
-import App from './app.jsx';
+import App from './App.jsx';
 
 ReactDom.render(App, document.body);
