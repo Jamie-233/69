@@ -1,11 +1,12 @@
 import React from 'react';
+import { hot } from 'react-hot-loader/root'
 
 class App extends React.Component {
   render() {
     return (
-      <div>123</div>
+      <div>12</div>
     )
   }
 }
 
-export default App;
+export default hot(App);
