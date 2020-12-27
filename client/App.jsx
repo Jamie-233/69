@@ -1,12 +1,8 @@
 import React from 'react';
-import { hot } from 'react-hot-loader/root'
+// import { hot } from 'react-hot-loader/root' // eslint-disable-line
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>12</div>
-    )
-  }
+function App() {
+  return <div>干干干</div>
 }
 
-export default hot(App);
+export default App;
