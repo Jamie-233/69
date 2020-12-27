@@ -1,31 +1,16 @@
 const path = require('path');
 const webpack = require('webpack');
+const { merge } = require('webpack-merge');
+const baseConfig = require('./webpack.config.base');
 const HTMLPlugin = require('html-webpack-plugin');
 const { isDev, CLIENT_PORT } = require('../config');
 
-const config = {
+const config = merge(baseConfig, {
   entry: {
     app: path.join(__dirname, '../client/app.js')
   },
   output: {
-    filename: '[name].[fullhash].js',
-    path: path.join(__dirname, '../dist'),
-    publicPath: '/public/'
-  },
-  module: {
-    rules: [
-      {
-        enforce: 'pre',
-        test: /\.(js|jsx)$/,
-        loader: 'eslint-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.(js|jsx)$/,
-        exclude: path.join(__dirname, '../node_modules'),
-        loader: 'babel-loader'
-      }
-    ]
+    filename: '[name].[fullhash].js'
   },
   resolve: {
     alias: {
@@ -37,7 +22,7 @@ const config = {
       template: path.join(__dirname, '../client/template.html')
     })
   ]
-}
+})
 
 if(isDev) {
   config.entry = {
