@@ -2,9 +2,12 @@ const express  = require('express');
 const ReactSSR = require('react-dom/server');
 const fs = require('fs');
 const path = require('path');
+const favicon = require('serve-favicon');
 const { isDev, SERVER_PORT } = require('../config');
 
 const app = express();
+console.log(path.join(__dirname, '../favicon.ico'));
+app.use(favicon(path.join(__dirname, '../favicon.ico')))
 
 // 静态文件指定返回内容
 if(!isDev) {
