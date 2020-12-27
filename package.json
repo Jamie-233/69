@@ -10,8 +10,12 @@
     "dev:server": "cross-env NODE_ENV=development node server/server.js",
     "clear": "rimraf dist",
     "build": "npm run clear && npm run build:client && npm run build:server",
-    "lint": "eslint --ext .js --ext .jsx client/",
-    "pre-commit": "npm run lint"
+    "lint": "eslint --ext .js --ext .jsx client/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   },
   "keywords": [],
   "author": "",
